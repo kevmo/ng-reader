@@ -1,9 +1,16 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
+<div ng-repeat="feed in feeds">
   <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+    <li ng-repeat="item in feed.items">
+      <a href=""></a>
+    </li>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+  URL: <input size="80" ng-model="feed.url" />
+  <button ng-click="fetchFeed(feed)">Update</button>
+  <button ng-click="deleteFeed(feed)">Delete</button>
+  <hr />
+</div>
+
+<div>
+  Add new feed URL: <input size="80" ng-model="newFeed.url">
+  <button ng-click="addFeed(newFeed)">Add Feed</button>
 </div>
